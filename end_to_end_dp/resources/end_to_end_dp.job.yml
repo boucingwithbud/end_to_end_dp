@@ -1,0 +1,16 @@
+resources:
+  jobs:
+    my_retail_pipeline_job:
+      name: my_retail_pipeline_job
+      trigger:
+        pause_status: UNPAUSED
+        periodic:
+          interval: 1
+          unit: DAYS
+      tasks:
+        - task_key: retail_data_pipeline
+          pipeline_task:
+            pipeline_id: 65089554-9b76-409b-a312-abac21c0e057
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED

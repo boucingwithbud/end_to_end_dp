@@ -1,0 +1,14 @@
+resources:
+  pipelines:
+    pipeline_retail_pipeline:
+      name: retail_pipeline
+      libraries:
+        - glob:
+            include: ../src/retail_pipeline/transformations/**
+      schema: default
+      continuous: false
+      photon: true
+      channel: CURRENT
+      catalog: workspace
+      serverless: true
+      root_path: ../src/retail_pipeline/retail_pipeline
